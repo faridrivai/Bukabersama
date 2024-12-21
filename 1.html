@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Buka Bersama</title>
+    <style>
+        body {
+            background-image: url(img/navbar.png);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f5eb;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .details {
+            margin: 2rem auto;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+        .details h2 {
+            margin-top: 0;
+            color: #ff9800;
+        }
+        .details p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .rsvp {
+            margin-top: 1.5rem;
+        }
+        button {
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #e68900;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .modal-content input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="details">
+            <h2>Assalamu'alaikum!</h2>
+            <p>
+                Dengan hormat, kami mengundang teman-teman untuk hadir dalam acara buka bersama dalam rangka menjalin silaturahmi.
+            </p>
+            <p><strong>Hari/Tanggal:</strong> Sabtu, 30 Maret 2024</p>
+            <p><strong>Waktu:</strong> 17.30 WIB (Menjelang Maghrib)</p>
+            <p><strong>Tempat:</strong> Restoran Padang Rasa Makmur, Jalan Cendana No. 12, Jakarta</p>
+            <p>Semoga kita dapat berkumpul dan berbagi kebahagiaan di bulan suci ini.</p>
+            <div class="rsvp">
+                <button onclick="openModal()">Konfirmasi Kehadiran</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="rsvpModal">
+        <div class="modal-content">
+            <h3>Konfirmasi Kehadiran</h3>
+            <p>Silakan masukkan nama Anda:</p>
+            <input type="text" id="nameInput" placeholder="Nama Anda">
+            <button onclick="submitRSVP()">Lanjutkan ke Grup WhatsApp</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('rsvpModal').style.display = 'flex';
+        }
+
+        function submitRSVP() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (name) {
+                const whatsappLink = `https://chat.whatsapp.com/HcOx9Kag9hm6BZnb2xyAao`;
+                window.location.href = whatsappLink;
+            } else {
+                alert('Mohon masukkan nama Anda sebelum melanjutkan.');
+            }
+        }
+    </script>
+</body>
+</html>
